@@ -16,11 +16,11 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Mapa de substituições A-Z (visual/runas)
 substituicoes = {
-    'A': 'Λ', 'B': 'ᛒ', 'C': 'ᚲ', 'D': 'ᛞ', 'E': 'Σ',
-    'F': 'Ϝ', 'G': 'ᚷ', 'H': 'ᚺ', 'I': 'Ι', 'J': 'ᛃ',
-    'K': 'ᚲ', 'L': 'ᛚ', 'M': 'ᛗ', 'N': 'И', 'O': 'Ø',
-    'P': 'ᛈ', 'Q': 'Ϙ', 'R': 'ᚱ', 'S': 'ᛋ', 'T': 'ᛏ',
-    'U': 'ᚢ', 'V': 'Ѵ', 'W': 'ᚹ', 'X': '⚒', 'Y': 'ᛃ', 'Z': 'ᛉ'
+    'A': 'Λ', 'B': 'ᛒ', 'C': 'C', 'D': 'D', 'E': 'Σ',
+    'F': 'F', 'G': 'G', 'H': 'ᚺ', 'I': 'I', 'J': 'J',
+    'K': 'ꓘ', 'L': 'L', 'M': 'ᛗ', 'N': 'Π', 'O': 'Ø',
+    'P': 'P', 'Q': 'Ϙ', 'R': 'Я', 'S': 'S', 'T': 'ᛏ',
+    'U': 'V', 'V': '∇', 'W': 'W', 'X': 'X', 'Y': 'Ψ', 'Z': 'Z'
 }
 
 # Função que converte a frase
@@ -34,9 +34,9 @@ async def on_ready():
 
 # Comando !converter
 @bot.command()
-async def converter(ctx, *, frase):
+async def forge(ctx, *, frase):
     convertido = converter_frase(frase)
-    await ctx.send(f"🔤 **Convertido:** `{convertido}`")
+    await ctx.send(f"⚔️{convertido}⚔️")
 
 # Rodar o bot
 bot.run(TOKEN)
