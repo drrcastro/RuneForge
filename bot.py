@@ -10,6 +10,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 # Intents necessários
 intents = discord.Intents.default()
 intents.message_content = True
+client = discord.Client(intents=discord.Intents.default())
 
 # Prefixo do bot (!converter)
 bot = commands.Bot(command_prefix="!", intents=intents)
@@ -31,6 +32,8 @@ def converter_frase(frase):
 @bot.event
 async def on_ready():
     print(f"✅ Bot conectado como {bot.user}")
+    for guild in client.guilds:
+        print(f"Guild Name: {guild.name}, Guild ID: {guild.id}")
 
 # Comando !converter
 @bot.command()
