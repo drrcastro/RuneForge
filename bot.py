@@ -10,7 +10,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 # Intents necessários
 intents = discord.Intents.default()
 intents.message_content = True
-client = discord.Client(intents=discord.Intents.default())
+intents.guilds = True
 
 # Prefixo do bot (!converter)
 bot = commands.Bot(command_prefix="!", intents=intents)
