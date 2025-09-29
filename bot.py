@@ -32,8 +32,10 @@ def converter_frase(frase):
 @bot.event
 async def on_ready():
     print(f"✅ Bot conectado como {bot.user}")
-    for guild in client.guilds:
-        print(f"Guild Name: {guild.name}, Guild ID: {guild.id}")
+    guilds = bot.guilds
+    print(f".servers: {len(guilds)}")
+    for guild in guilds:
+        print(f" - {guild.name} (ID: {guild.id})")
 
 # Comando !converter
 @bot.command()
